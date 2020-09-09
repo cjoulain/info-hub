@@ -40,13 +40,3 @@ Feature: Questions API
     Then the response status should be "200"
     And the JSON response should have "$[2].title" with the text "Triptych"
 
-  Scenario: A question cannot be created with a blank title
-    When I send a POST request to "/questions" with the following:
-    """
-    {
-      "title": "",
-      "body": ""
-    }
-    """
-    Then the response status should be "400"
-    And the JSON response should have "$.error" with the text "Title can't be blank","Body can't be blank"
