@@ -1,11 +1,5 @@
-<% if @question.errors.any? %>
-<div id="error_explanation">
-<h2><%= pluralize(@question.errors.count, "error") %>
-prohibited this project from being saved:</h2>
-<ul>
-<% @question.errors.full_messages.each do |msg| %>
-<li><%= msg %></li>
-<% end %>
-</ul>
-</div>
-<% end %>
+<h1>New Question</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', questions_path %>

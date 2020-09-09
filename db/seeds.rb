@@ -8,7 +8,17 @@
 
 initial_question = Question.create!(title: "First question", body: "Quo vadis?")
 
-require 'cucumber/persona'
-require_relative '../features/personas'
+second_question = Question.create!(title: "Second question", body: "Filler")
 
-Cucumber::Persona.create_all
+third_question = Question.create!(title: "Triptych", body: "Tercero!")
+
+fourth_question = Question.create!(title: "Fourth", body: "Four?")
+
+# first_answer = Answer.create!(body: "The response you were expecting.")
+
+# second_answer = Answer.create!(body: "Yay")
+
+# require 'cucumber/persona'
+# require_relative '../features/personas'
+
+# Cucumber::Persona.create_all

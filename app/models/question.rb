@@ -1,7 +1,7 @@
 class Question < ApplicationRecord
-  default_scope { order(created_at: :asc) }
+  has_many :answers
 
-  # has_many: answers
+  default_scope { order(created_at: :asc) }
 
   validates :title, :body, presence: true 
 end

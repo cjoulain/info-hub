@@ -4,6 +4,11 @@ class QuestionsController < ApplicationController
     render json: @questions
   end
 
+    def new
+      @question = Question.new(question_params)
+      render 'questions/new'
+    end 
+
     # GET /question/:id
     def show 
       @question = Question.find_by(id: params[:id])
