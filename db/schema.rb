@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_211721) do
 
   create_table "answers", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "body"
+    t.uuid "question_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
