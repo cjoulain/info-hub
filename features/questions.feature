@@ -11,17 +11,17 @@ Feature: Questions API
     And the JSON response should have "$[0]title" with the text "First question"
   
   Scenario: Question can be described through show action
-    When I send a GET request to "questions/6da219db-f39a-4d2a-bc21-b2121ee35dbc"
+    When I send a GET request to "questions/0b687481-322e-4276-8cfa-7dced7c3d552"
     Then the response status should be "200"
     And the JSON response should have "$.body" with the text "Quo vadis?"
 
   Scenario: Question can be deleted
-    When I send a DELETE request to "/questions/ec61e444-58a8-4e9c-9f51-52ca00571b39"
+    When I send a DELETE request to "/questions/137cc9de-d29b-4051-8031-f8fd539c28ba"
     Then the response status should be "200"
     And the JSON response should have "$.message" with the text "Question successfully deleted."
-    When I send a GET request to "/questions/bb2361fe-ec6d-450b-90a2-03d90bbafbf7"
+    When I send a GET request to "/questions/137cc9de-d29b-4051-8031-f8fd539c28ba"
     Then the response status should be "404"
-    When I send a DELETE request to "/questions/ec61e444-58a8-4e9c-9f51-52ca00571b39"
+    When I send a DELETE request to "/questions/137cc9de-d29b-4051-8031-f8fd539c28ba"
     Then the JSON response should have "$.error" with the text "Unable to delete Question."
     And the response status should be "400"
 
@@ -53,7 +53,7 @@ Scenario: A question cannot be created with a blank title or blank body
     And the JSON response should not have "$.body" with the text ""
 
   Scenario: An existing question can be updated
-    When I send a PUT request to "/questions/7edfea2b-6776-44e6-a152-1ddc98b6d4d6" with the following:
+    When I send a PUT request to "/questions/b10d484b-33cd-423b-88d1-92b9cfc9259c" with the following:
     """
     {
       "title": "Cuatro"
@@ -72,12 +72,12 @@ Scenario: A question cannot be created with a blank title or blank body
     Then the response status should be "404"
 
   Scenario: An existing question cannot be updated with a blank title
-    When I send a PUT request to "questions/ec61e444-58a8-4e9c-9f51-52ca00571b39" with the following:
+    When I send a PUT request to "questions/137cc9de-d29b-4051-8031-f8fd539c28ba" with the following:
     """
     {
       "body": ""
     }
     """
     Then the response status should be "400"
-    When I send a GET request to "questions/ec61e444-58a8-4e9c-9f51-52ca00571b39"
+    When I send a GET request to "questions/137cc9de-d29b-4051-8031-f8fd539c28ba"
     And the JSON response should have "$.body" with the text "Filler"

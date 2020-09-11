@@ -1,5 +1,5 @@
 class Question < ApplicationRecord
-  has_many :answers
+  has_many :answers, -> { order(created_at: :asc) }
 
   default_scope { order(created_at: :asc) }
 

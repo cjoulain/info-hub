@@ -14,7 +14,7 @@ third_question = Question.create!(title: "Triptych", body: "Tercero!")
 
 fourth_question = Question.create!(title: "Fourth", body: "Four?")
 
-first_answer = Answer.create!(body: "The response you were expecting.", question_id: Question.last.id)
+first_answer = Answer.create!(body: "The response you were expecting.", question_id: Question.first.id)
 
 second_answer = Answer.create!(body: "Another fab response to an excellent question", question_id: Question.second.id)
 
