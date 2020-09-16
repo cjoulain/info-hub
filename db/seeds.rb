@@ -18,7 +18,7 @@ first_answer = Answer.create!(body: "The response you were expecting.", question
 
 second_answer = Answer.create!(body: "Another fab response to an excellent question", question_id: Question.second.id)
 
-# require 'cucumber/persona'
-# require_relative '../features/personas'
+require 'cucumber/persona'
+require_relative '../features/personas'
 
-# Cucumber::Persona.create_all
+Cucumber::Persona.create_all

@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  
-  resources :questions do 
-    resources :answers do 
+  resources :questions do # /questions[/:id]
+    resources :answers do # /questions/:question_id/answers/[:id]
     end
   end
 end
